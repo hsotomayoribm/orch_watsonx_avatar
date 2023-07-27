@@ -1,0 +1,12 @@
+*.swp
+*.tmp
+*.log
+
+coverage/
+node_modules/
+*.pem
+*.key
+deployment_config.yaml
+deployment_config.icr.yaml
+proxy-configmap.yaml
+proxy-configmap.icr.yaml

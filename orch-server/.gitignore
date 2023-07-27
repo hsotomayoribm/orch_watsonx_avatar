@@ -1,0 +1,17 @@
+certs/
+dist/
+orch-configmap.yaml
+orch-configmap.josh.yaml
+orch-configmap.isaac.yaml
+orch-configmap.neural.yaml
+orch-configmap.icr.yaml
+orch-configmap.dev.yaml
+orch-configmap.icr.new.yaml
+deployment_config.yaml
+deployment_config.josh.yaml
+deployment_config.icr.yaml
+deployment_config.isaac.yaml
+deployment_config.neural.yaml
+deployment_config.dev.yaml
+deployment_config.icr.new.yaml
+deployment_config.replace.yaml

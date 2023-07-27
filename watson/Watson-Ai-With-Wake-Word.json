@@ -1,0 +1,1838 @@
+{
+  "name": "GenAI with Wake Word-action",
+  "type": "action",
+  "valid": true,
+  "status": "Available",
+  "created": "2023-06-08T16:06:10.968Z",
+  "updated": "2023-06-14T01:18:02.852Z",
+  "language": "en",
+  "skill_id": "a0412d1d-a442-4229-9ae6-24dd60aca0d2",
+  "workspace": {
+    "actions": [
+      {
+        "steps": [
+          {
+            "step": "step_339",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "@hideCards() @showCards(introduction) @gestureobject(null)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Just say \"Hi Jenny\" to begin!"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Say \"Hey Jenny\" to begin!"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Just say \"Hello Jenny\" to begin!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "expression": "{\n  \"id\": \"introduction\",\n  \"data\": {\n    \"list\": [\n      {\n        \"label\": \"is Watson Discovery scalable?\",\n        \"value\": \"is Watson Discovery scalable\"\n      },\n      {\n        \"label\": \"is Watson Assistant secure?\",\n        \"value\": \"is Watson Assistant secure\"\n      },\n      {\n        \"label\": \"what is Agent Assist?\",\n        \"value\": \"what is Agent Assist?\"\n      },\n      {\n        \"label\": \"what files can I upload to Discovery?\",\n        \"value\": \"what files can I upload to discovery\"\n      }\n    ]\n  },\n  \"type\": \"introduction\"\n}"
+                  },
+                  "skill_variable": "public_introduction"
+                },
+                {
+                  "value": {
+                    "scalar": false
+                  },
+                  "skill_variable": "wake"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_339"
+          }
+        ],
+        "title": "what can you do",
+        "action": "action_13414",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_13414_intent_27189"
+        },
+        "variables": [
+          {
+            "title": "@hideCards() @showCards(introduction) @gestureobject(null)",
+            "variable": "step_339",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_35898",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_475",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "@hideCards() @showCards(browserIdSet) @hideCards()"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hello, I'm @pronounce(GenAI, Jenny), and I'm an expert on Watson Assistant and Discovery products. Let me know if you have any questions about them."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hi, my name is @pronounce(GenAI, Jenny), I have been trained on Watson Assistant and Discovery product pages. I can answer any of your Watson related questions."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Welcome! My name is @pronounce(GenAI, Jenny), and I've been trained on Watson Assistant and Discovery product pages. Ask me anything related to these products."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "random"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "scalar": true
+                  },
+                  "skill_variable": "browserIdSet"
+                },
+                {
+                  "value": {
+                    "scalar": false
+                  },
+                  "skill_variable": "wake"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "action_13414",
+                "parameters": null,
+                "result_variable": "step_475_result_1"
+              }
+            },
+            "variable": "step_475"
+          }
+        ],
+        "title": "greet",
+        "action": "action_15381",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_15381_intent_44281"
+        },
+        "variables": [
+          {
+            "title": "@hideCards() @showCards(browserIdSet) @hideCards()",
+            "variable": "step_475",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_475_result_1",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_13414",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_798",
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "action_15381",
+                "parameters": null,
+                "result_variable": "step_798_result_1"
+              }
+            },
+            "variable": "step_798"
+          }
+        ],
+        "title": "start over",
+        "action": "action_15443",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_15443_intent_18308"
+        },
+        "variables": [
+          {
+            "title": "No response",
+            "variable": "step_798",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_798_result_1",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_15381",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_101",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "@hideCards() @showCards(introduction)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "expression": "{\n  \"id\": \"introduction\",\n  \"data\": {\n    \"list\": [\n      {\n        \"label\": \"is Watson Discovery scalable?\",\n        \"value\": \"is Watson Discovery scalable\"\n      },\n      {\n        \"label\": \"is Watson Assistant secure?\",\n        \"value\": \"is Watson Assistant secure\"\n      },\n      {\n        \"label\": \"what is Agent Assist?\",\n        \"value\": \"what is Agent Assist?\"\n      },\n      {\n        \"label\": \"what files can I upload to Discovery?\",\n        \"value\": \"what files can I upload to discovery\"\n      }\n    ]\n  },\n  \"type\": \"introduction\"\n}"
+                  },
+                  "skill_variable": "public_introduction"
+                },
+                {
+                  "value": {
+                    "expression": "False"
+                  },
+                  "skill_variable": "wake"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_101",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "wake"
+                },
+                {
+                  "scalar": false
+                }
+              ]
+            }
+          }
+        ],
+        "title": "intro",
+        "action": "action_19432",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_19432_intent_24434"
+        },
+        "variables": [
+          {
+            "title": "@hideCards() @showCards(introduction)",
+            "variable": "step_101",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_5643",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_989",
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "expression": "input.original_text"
+                  },
+                  "skill_variable": "query_text"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_989",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "wake"
+                },
+                {
+                  "scalar": true
+                }
+              ]
+            },
+            "next_step": "step_266"
+          },
+          {
+            "step": "step_266",
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "expression": "input.text"
+                  },
+                  "skill_variable": "query_text"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_266",
+            "condition": {
+              "not": {
+                "exists": {
+                  "skill_variable": "query_text"
+                }
+              }
+            },
+            "next_step": "step_519"
+          },
+          {
+            "step": "step_519",
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "expression": "context"
+                  },
+                  "skill_variable": "query_context"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "callout",
+              "callout": {
+                "path": "/seek",
+                "type": "integration_interaction",
+                "method": "POST",
+                "internal": {
+                  "spec_hash_id": "64d3fdcc656b220429cc589fe125c30d96332c884df09c1f782dd399b83f6a65",
+                  "catalog_item_id": "1145266e-96c4-4062-90be-5ce4e84cd16f"
+                },
+                "request_mapping": {
+                  "body": [
+                    {
+                      "value": {
+                        "skill_variable": "query_text"
+                      },
+                      "parameter": "question"
+                    }
+                  ]
+                },
+                "result_variable": "step_519_result_1"
+              }
+            },
+            "variable": "step_519",
+            "next_step": "step_469"
+          },
+          {
+            "step": "step_469",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "I tried searching my knowledge base, but it does not seem to be working at the moment.  Sorry!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_469",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_519_result_1",
+                  "variable_path": "success"
+                },
+                {
+                  "scalar": false
+                }
+              ]
+            },
+            "next_step": "step_203"
+          },
+          {
+            "step": "step_203",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "@hideCards() "
+                          },
+                          {
+                            "variable": "step_519_result_1",
+                            "variable_path": "body.answer"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_203",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_519_result_1",
+                  "variable_path": "success"
+                },
+                {
+                  "scalar": true
+                }
+              ]
+            },
+            "next_step": "step_949"
+          },
+          {
+            "step": "step_949",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you're interested in learning more, see"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you want to delve deeper into the topic, check out"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you'd like additional information, take a look at"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you're curious to know more, see"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you'd like to explore this further, check out"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you're seeking further understanding, take a look at"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "<a href=\""
+                          },
+                          {
+                            "variable": "step_519_result_1",
+                            "variable_path": "body.url"
+                          },
+                          {
+                            "scalar": "\" target=\"_blank\">"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "this article"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "this write-up"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "this publication"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "this document"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "</a>.\n\n@hideCards() @showCards(neuralSeekLink)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_949",
+            "condition": {
+              "and": [
+                {
+                  "exists": {
+                    "variable": "step_519_result_1",
+                    "variable_path": "body.url"
+                  }
+                },
+                {
+                  "expression": "${step_519_result_1}.body.score > 15"
+                },
+                {
+                  "not_contains": [
+                    {
+                      "variable": "step_519_result_1",
+                      "variable_path": "body.answer"
+                    },
+                    {
+                      "scalar": "sorry",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "not_contains": [
+                    {
+                      "variable": "step_519_result_1",
+                      "variable_path": "body.answer"
+                    },
+                    {
+                      "scalar": "I'm not an expert in this, but ",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "next_step": "step_606"
+          },
+          {
+            "step": "step_606",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "#PauseOne Would you like to ask anything else?\n\n@showCards(options)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "expression": "{\n  \"id\": \"options\",\n  \"data\": {\n    \"options\": [\n      {\n        \"label\": \"Yes\",\n        \"value\": \"yes\"\n      },\n      {\n        \"label\": \"No\",\n        \"value\": \"no\"\n      }\n    ]\n  },\n  \"type\": \"options\"\n}"
+                  },
+                  "skill_variable": "public_options"
+                },
+                {
+                  "value": {
+                    "expression": "null"
+                  },
+                  "skill_variable": "query_text"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": " "
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 1,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_606",
+            "next_step": "step_267"
+          },
+          {
+            "step": "step_267",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "@hideCards()"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The floor is yours."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Feel free to ask me anything that comes to mind."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "I'm open to any questions you might have."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Fire away!"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Ask me whatever comes to mind."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_267",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_606"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_718"
+          },
+          {
+            "step": "step_718",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "@hideCards()"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "It was a pleasure talking with you!"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Our discussion was truly enjoyable!"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "I had a great time talking with you!"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Talking with you was a highlight of my day!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "scalar": false
+                  },
+                  "skill_variable": "wake"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "action_13414",
+                "parameters": null,
+                "result_variable": "step_718_result_1"
+              }
+            },
+            "variable": "step_718",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_606"
+                },
+                {
+                  "scalar": "no"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "NeuralSeek search",
+        "action": "action_35898",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_38139_intent_5738"
+        },
+        "variables": [
+          {
+            "title": "@hideCards() {variable}",
+            "variable": "step_203",
+            "data_type": "any"
+          },
+          {
+            "title": "No response",
+            "variable": "step_266",
+            "data_type": "any"
+          },
+          {
+            "title": "@hideCards()",
+            "variable": "step_267",
+            "data_type": "any"
+          },
+          {
+            "title": "I tried searching my knowledge base, but it does not seem to be ",
+            "variable": "step_469",
+            "data_type": "any"
+          },
+          {
+            "title": "No response",
+            "variable": "step_519",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_519_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "#PauseOne Would you like to ask anything else? @showCards(option",
+            "variable": "step_606",
+            "data_type": "yes_no"
+          },
+          {
+            "title": "@hideCards()",
+            "variable": "step_718",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_718_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "If you're interested in learning more, see",
+            "variable": "step_949",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_975_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "No response",
+            "variable": "step_989",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "fallback",
+        "topic_switch": {
+          "allowed_from": false,
+          "allowed_into": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_753",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Ask me anything!"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Go ahead!"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "yes?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "scalar": true
+                  },
+                  "skill_variable": "wake"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "action_6992",
+                "parameters": null,
+                "result_variable": "step_753_result_1"
+              }
+            },
+            "variable": "step_753"
+          }
+        ],
+        "title": "Hey Jenny",
+        "action": "action_5643",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_5643_intent_1522"
+        },
+        "variables": [
+          {
+            "title": "Ask me anything!",
+            "variable": "step_753",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_753_result_1",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_15443",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_563",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "@showCards(wakeSound)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "expression": "{\n  \"id\": \"wakeSound\",\n  \"data\": {},\n  \"type\": \"wakeSound\"\n}\n"
+                  },
+                  "skill_variable": "public_wakeSound"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_563"
+          }
+        ],
+        "title": "wake sound",
+        "action": "action_6992",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_6992_intent_23646"
+        },
+        "variables": [
+          {
+            "title": "@showCards(wakeSound)",
+            "variable": "step_563",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_19432",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_317",
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "expression": "False"
+                  },
+                  "skill_variable": "wake"
+                },
+                {
+                  "value": {
+                    "expression": "null"
+                  },
+                  "skill_variable": "query_text"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "action_19432",
+                "parameters": null,
+                "result_variable": "step_317_result_1"
+              }
+            },
+            "variable": "step_317",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "wake"
+                },
+                {
+                  "scalar": false
+                }
+              ]
+            },
+            "next_step": "step_895"
+          },
+          {
+            "step": "step_895",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Thats an interesting question! One moment."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "That sounds cool, one sec."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "That's a great question! One moment."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "What an interesting question! Hold on."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "I'm curious to know the answer to that too! Just a sec."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "That's an excellent question! Let me look."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "random"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "action_35898",
+                "parameters": null,
+                "result_variable": "step_895_result_1"
+              }
+            },
+            "variable": "step_895",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "wake"
+                },
+                {
+                  "scalar": true
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No action matches",
+        "action": "anything_else",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "No response",
+            "variable": "step_317",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_317_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "Thats an interesting question! One moment.",
+            "variable": "step_895",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_895_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_336",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Sure thing. One second."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "For sure! Just give me a second."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Absolutely! Let me look that up."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Sure thing! Just a sec."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Of course! Just a moment."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "You got it! Hold on."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Definitely! Let me look."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Right away! Just a second."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "action_35898",
+                "parameters": null,
+                "result_variable": "step_336_result_1"
+              }
+            },
+            "variable": "step_336"
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "Sure thing. One second.",
+            "variable": "step_336",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_336_result_1",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "run_always",
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "danger_word_detected",
+            "title": "Connect to agent",
+            "handlers": [],
+            "resolver": {
+              "type": "fallback"
+            },
+            "variable": "danger_word_detected_variable",
+            "condition": {
+              "entity": "danger_words"
+            },
+            "next_step": "profanity_detected"
+          },
+          {
+            "step": "profanity_detected",
+            "title": "Show warning",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please use appropriate language when interacting with the assistant."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "max_hits",
+                "handler": "max_hits_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "max_hits": 2,
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "profanity_detected_variable",
+            "condition": {
+              "entity": "profane_words"
+            }
+          }
+        ],
+        "title": "Trigger word detected",
+        "action": "run_always",
+        "boosts": [],
+        "handlers": [],
+        "variables": [
+          {
+            "title": "Profanity detected",
+            "variable": "danger_word_detected_variable",
+            "data_type": "any"
+          },
+          {
+            "title": "Profane word detected",
+            "variable": "profanity_detected_variable",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else"
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "@showCards(browserIdSet) @hideCards()\n\nHi, my name is @pronounce(GenAI, Jenny), I can answer any of your Watson questions."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "scalar": true
+                  },
+                  "skill_variable": "browserIdSet"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "action_13414",
+                "parameters": null,
+                "result_variable": "step_001_result_1"
+              }
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "title": "@showCards(browserIdSet) @hideCards() Hi, my name is @pronounce(",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_001_result_1",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_6992",
+        "disambiguation_opt_out": true
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_13414_intent_27189",
+        "examples": []
+      },
+      {
+        "intent": "action_15381_intent_44281",
+        "examples": [
+          {
+            "text": "greet"
+          }
+        ]
+      },
+      {
+        "intent": "action_15443_intent_18308",
+        "examples": [
+          {
+            "text": "start over"
+          }
+        ]
+      },
+      {
+        "intent": "action_19432_intent_24434",
+        "examples": []
+      },
+      {
+        "intent": "action_38139_intent_5738",
+        "examples": []
+      },
+      {
+        "intent": "action_5643_intent_1522",
+        "examples": [
+          {
+            "text": "Hey Jenny"
+          },
+          {
+            "text": "Hi Jenny"
+          }
+        ]
+      },
+      {
+        "intent": "action_6992_intent_23646",
+        "examples": []
+      },
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "Agent help"
+          },
+          {
+            "text": "Call agent"
+          },
+          {
+            "text": "Can I connect to an agent?"
+          },
+          {
+            "text": "I would like to speak to a human"
+          },
+          {
+            "text": "I would like to speak to someone"
+          }
+        ],
+        "description": "Please transfer me to an agent"
+      }
+    ],
+    "entities": [
+      {
+        "entity": "danger_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "profane_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "sys-yes-no",
+        "values": []
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "variables": [
+      {
+        "title": "browserIdSet",
+        "variable": "browserIdSet",
+        "data_type": "boolean",
+        "description": "",
+        "initial_value": {
+          "scalar": true
+        }
+      },
+      {
+        "title": "public-browserIdSet",
+        "variable": "public_browserIdSet",
+        "data_type": "boolean",
+        "description": "",
+        "initial_value": {
+          "scalar": true
+        }
+      },
+      {
+        "title": "public-introduction",
+        "variable": "public_introduction",
+        "data_type": "any",
+        "description": ""
+      },
+      {
+        "title": "public-options",
+        "variable": "public_options",
+        "data_type": "any",
+        "description": ""
+      },
+      {
+        "title": "public-wakeSound",
+        "variable": "public_wakeSound",
+        "data_type": "any",
+        "description": ""
+      },
+      {
+        "title": "query_context",
+        "variable": "query_context",
+        "data_type": "any",
+        "description": ""
+      },
+      {
+        "title": "query_text",
+        "variable": "query_text",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "wake",
+        "variable": "wake",
+        "data_type": "boolean",
+        "description": "",
+        "initial_value": {
+          "scalar": false
+        }
+      }
+    ],
+    "data_types": [],
+    "counterexamples": [],
+    "system_settings": {
+      "nlp": {
+        "model": "latest"
+      },
+      "variable": {
+        "format": {
+          "time": {
+            "pattern": "short"
+          },
+          "currency": {
+            "fraction_digits": 2
+          }
+        }
+      },
+      "off_topic": {
+        "enabled": true
+      },
+      "launch_mode": {},
+      "topic_switch": {
+        "enabled": true,
+        "messages": {},
+        "max_tries": 3
+      },
+      "disambiguation": {
+        "prompt": "Did you mean:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "None of the above",
+        "use_connect_to_support_prompt": "Connect to support",
+        "single_answer_clarification_prompt": "Something else"
+      },
+      "intent_classification": {
+        "training_backend_version": "v2"
+      },
+      "spelling_auto_correct": true
+    },
+    "learning_opt_out": false
+  },
+  "description": "created for assistant 03f1bae2-4142-465e-a4b7-63ad41a543b6",
+  "assistant_id": "6af0fb1b-515a-4632-b2ca-863db6ce327f",
+  "workspace_id": "a0412d1d-a442-4229-9ae6-24dd60aca0d2",
+  "dialog_settings": {},
+  "next_snapshot_version": "1"
+}

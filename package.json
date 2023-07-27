@@ -1,0 +1,32 @@
+{
+  "name": "mvp-soul-machine",
+  "version": "1.0.0",
+  "description": "This application combines [Watson Assistant](https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started) and [Soul Machines](https://support.soulmachines.cloud/) to create a digital concierge.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "setup:react": "cd react-ui && npm install",
+    "setup:orch": "cd orch-server && npm install",
+    "setup:proxy": "cd proxy-server && npm install",
+    "setup:certs": "cd orch-server && npm run certs",
+    "setup:envs": "./scripts/create-envs.sh",
+    "dev:orch": "cd orch-server && npm run dev",
+    "dev:react": "cd react-ui && npm run dev",
+    "dev:proxy": "cd proxy-server && npm run start",
+    "setup": "concurrently npm:setup:*",
+    "dev": "concurrently npm:dev:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ibm.com/skol-assets/pox-assets-customer-care/tree/main/MVP-13-Soul-Machines"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.2.1",
+    "package.json": "^0.0.0"
+  }
+}

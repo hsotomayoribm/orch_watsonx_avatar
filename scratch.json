@@ -1,0 +1,24 @@
+{
+  "id": "introduction",
+  "data": {
+    "list": [
+      {
+        "label": "is Watson Discovery scalable?",
+        "value": "is Watson Discovery scalable"
+      },
+      {
+        "label": "is Watson Assistant secure?",
+        "value": "is Watson Assistant secure"
+      },
+      {
+        "label": "what are Watson Assistant actions?",
+        "value": "what are Watson Assistant actions?"
+      },
+      {
+        "label": "what files can I upload to Discovery?",
+        "value": "what files can I upload to discovery"
+      }
+    ]
+  },
+  "type": "introduction"
+}
